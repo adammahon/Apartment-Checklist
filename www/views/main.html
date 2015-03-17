@@ -1,6 +1,17 @@
 <ion-view view-title="Main">
+    <ion-nav-buttons side="right">
+        <i class="icon ion-trash-b" ng-click="deleteToggle()"></i>
+        <i class="icon ion-plus" ng-click="goToState('app.addApartment')"></i>
+    </ion-nav-buttons>
     <ion-content>
-        <h1>Main</h1>
-        <a href="#/apartment">apartment</a>
+        <button class="button button-block button-positive" ng-click="deleteAll()">Delete All</button>
+        <div class="list list-inset">
+            <div class="item item-button-right" ng-repeat="apartment in data" ng-click="getItem({{apartment.id}})">
+                {{apartment.name}}
+                <button class="button button-assertive" ng-show="visible" ng-click="deleteItem({{apartment.id}})">
+                    <i class="icon ion-close"></i>
+                </button>
+            </div>
+        </div>
     </ion-content>
 </ion-view>

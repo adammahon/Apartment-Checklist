@@ -1,0 +1,264 @@
+<ion-view view-title="Add Apartment">
+    <ion-content>
+        <h1>Apartment</h1>
+        <form ng-submit="addApartmentSubmit()">
+            <div class="list list-inset">
+                <label class="item item-input">
+                    <input type="text" placeholder="Name" ng-model="add.name" required>
+                </label>
+                <label class="item item-input">
+                    <input type="text" placeholder="Phone" ng-model="add.phone">
+                </label>
+                <label class="item item-input">
+                    <input type="text" placeholder="Address" ng-model="add.address">
+                </label>
+                <label class="item item-input">
+                    <input type="text" placeholder="City" ng-model="add.city">
+                </label>
+                <label class="item item-input item-stacked-label">
+                    <span class="input-label">Bedrooms</span>
+                    <div class="range">
+                        <input type="range" name="bedroom" min="0" max="5" value="0" ng-model="add.bedroom">
+                    </div>
+                </label>
+                <label class="item item-input item-stacked-label">
+                    <span class="input-label">Bathrooms</span>
+                    <div class="range">
+                        <input type="range" name="bathroom" min="0" max="5" value="0" ng-model="add.bathroom">
+                    </div>
+                </label>
+                <label class="item item-input">
+                    <input type="number" placeholder="Sq. Ft." ng-model="add.sqft">
+                </label>
+                <label class="item item-input item-stacked-label">
+                    <span class="input-label">Lease Length (in Months)</span>
+                    <div class="range">
+                        <input type="range" name="lease" min="1" max="24" value="0" ng-model="add.lease">
+                    </div>
+                </label>
+                <label class="item item-input">
+                    <input type="number" placeholder="Application Fee" ng-model="add.applicationFee">
+                </label>
+                <label class="item item-input">
+                    <input type="number" placeholder="Security Deposit" ng-model="add.securityDeposit">
+                </label>
+                <label class="item item-input item-stacked-label">
+                    <span class="input-label">Utilities</span>
+                    <ul class="list">
+                        <li class="item item-checkbox">
+                            <span class="checkbox">
+                                <input type="checkbox" ng-model="add.utilities.gas">
+                            </span>
+                            Gas
+                        </li>
+                        <li class="item item-checkbox">
+                            <label class="checkbox">
+                                <input type="checkbox" ng-model="add.utilities.water">
+                            </label>
+                            Water
+                        </li>
+                        <li class="item item-checkbox">
+                            <label class="checkbox">
+                                <input type="checkbox" ng-model="add.utilities.sewage">
+                            </label>
+                            Sewage
+                        </li>
+                        <li class="item item-checkbox">
+                            <label class="checkbox">
+                                <input type="checkbox" ng-model="add.utilities.electric">
+                            </label>
+                            Electric
+                        </li>
+                        <li class="item item-checkbox">
+                            <label class="checkbox">
+                                <input type="checkbox" ng-model="add.utilities.trash">
+                            </label>
+                            Trash Pickup
+                        </li>
+                        <li class="item item-checkbox">
+                            <label class="checkbox">
+                                <input type="checkbox" ng-model="add.utilities.cable">
+                            </label>
+                            Cable
+                        </li>
+                        <li class="item item-checkbox">
+                            <label class="checkbox">
+                                <input type="checkbox" ng-model="add.utilities.internet">
+                            </label>
+                            Internet
+                        </li>
+                    </ul>
+                </label>
+                <label class="item item-input item-stacked-label">
+                    <span class="input-label">Apartment Features</span>
+                    <ul class="list">
+                        <li class="item item-checkbox">
+                            <span class="checkbox">
+                                <input type="checkbox" ng-model="add.apartmentFeatures.alarm">
+                            </span>
+                            Alarm
+                        </li>
+                        <li class="item item-checkbox">
+                            <label class="checkbox">
+                                <input type="checkbox" ng-model="add.apartmentFeatures.entry">
+                            </label>
+                            Private Entry
+                        </li>
+                        <li class="item item-checkbox">
+                            <span class="checkbox">
+                                <input type="checkbox" ng-model="add.apartmentFeatures.patioBalcony">
+                            </span>
+                            Patio / Balcony
+                        </li>
+                        <li class="item item-checkbox">
+                            <span class="checkbox">
+                                <input type="checkbox" ng-model="add.apartmentFeatures.storage">
+                            </span>
+                            Extra Storage
+                        </li>
+                        <li class="item item-checkbox">
+                            <label class="checkbox">
+                                <input type="checkbox" ng-model="add.apartmentFeatures.smoke">
+                            </label>
+                            Smoke Detectors
+                        </li>
+                        <li class="item item-checkbox">
+                            <label class="checkbox">
+                                <input type="checkbox" ng-model="add.apartmentFeatures.monoxide">
+                            </label>
+                            Carbon Monoxide Detectors
+                        </li>
+                        <li class="item item-checkbox">
+                            <label class="checkbox">
+                                <input type="checkbox" ng-model="add.apartmentFeatures.window">
+                            </label>
+                            Functioning Windows
+                        </li>
+                    </ul>
+                    <label class="item item-input item-select">
+                        <div class="input-label">
+                            Flooring
+                        </div>
+                        <select ng-model="add.apartmentFeatures.floor">
+                            <option></option>
+                            <option>Carpet</option>
+                            <option>Laminate</option>
+                            <option>Linoleum</option>
+                            <option>Stone</option>
+                            <option>Tile</option>
+                            <option>Vinyl</option>
+                            <option>Wood</option>
+                        </select>
+                    </label>
+                    <label class="item item-input item-stacked-label">
+                        <span class="input-label">Wall Conditions</span>
+                        <div class="range">
+                            <input type="range" name="wall" min="1" max="5" ng-model="add.apartmentFeatures.wall">
+                        </div>
+                    </label>
+                    <label class="item item-input item-stacked-label">
+                        <span class="input-label">Closet Space</span>
+                        <div class="range">
+                            <input type="range" name="closet" min="1" max="5" ng-model="add.apartmentFeatures.closet">
+                        </div>
+                    </label>
+                </label>
+                <label class="item item-input item-stacked-label">
+                    <span class="input-label">Appliances Included</span>
+                    <ul class="list">
+                        <li class="item item-checkbox">
+                            <label class="checkbox">
+                                <input type="checkbox" ng-model="add.appliances.washer">
+                            </label>
+                            Washer
+                        </li>
+                        <li class="item item-checkbox">
+                            <label class="checkbox">
+                                <input type="checkbox" ng-model="add.appliances.dryer">
+                            </label>
+                            Dryer
+                        </li>
+                        <li class="item item-checkbox">
+                            <label class="checkbox">
+                                <input type="checkbox" ng-model="add.appliances.refrigerator">
+                            </label>
+                            Refrigerator
+                        </li>
+                        <li class="item item-checkbox">
+                            <label class="checkbox">
+                                <input type="checkbox" ng-model="add.appliances.stove">
+                            </label>
+                            Stove
+                        </li>
+                        <li class="item item-checkbox">
+                            <label class="checkbox">
+                                <input type="checkbox" ng-model="add.appliances.dishwasher">
+                            </label>
+                            Dishwasher
+                        </li>
+                        <li class="item item-checkbox">
+                            <label class="checkbox">
+                                <input type="checkbox" ng-model="add.appliances.microwave">
+                            </label>
+                            Microwave
+                        </li>
+                        <li class="item item-checkbox">
+                            <label class="checkbox">
+                                <input type="checkbox" ng-model="add.appliances.sinkGarbage">
+                            </label>
+                            Sink Garbage Disposal
+                        </li>
+                    </ul>
+                </label>
+                <label class="item item-input item-stacked-label">
+                    <span class="input-label">Community Features</span>
+                    <ul class="list">
+                        <li class="item item-checkbox">
+                            <label class="checkbox">
+                                <input type="checkbox" ng-model="add.community.emergencyExit">
+                            </label>
+                            Reachable Emergency Exits
+                        </li>
+                        <li class="item item-checkbox">
+                            <label class="checkbox">
+                                <input type="checkbox" ng-model="add.community.pet">
+                            </label>
+                            Pet-Friendly
+                        </li>
+                        <li class="item item-checkbox">
+                            <label class="checkbox">
+                                <input type="checkbox" ng-model="add.community.package">
+                            </label>
+                            Package Service
+                        </li>
+                        <li class="item item-checkbox">
+                            <label class="checkbox">
+                                <input type="checkbox" ng-model="add.community.emergencyMaintenance">
+                            </label>
+                            Emergency Maintenance
+                        </li>
+                        <li class="item item-checkbox">
+                            <label class="checkbox">
+                                <input type="checkbox" ng-model="add.community.laundry">
+                            </label>
+                            Laundry Facilities
+                        </li>
+                    </ul>
+                    <label class="item item-input item-stacked-label">
+                        <span class="input-label">Noise Level</span>
+                        <div class="range">
+                            <input type="range" name="wall" min="1" max="5" ng-model="add.community.noise">
+                        </div>
+                    </label>
+                </label>
+                <label class="item item-input">
+                    <input type="number" placeholder="Distance to Work (min.)" ng-model="add.work">
+                </label>
+                <label class="item item-input">
+                    <textarea placeholder="Comments" ng-model="add.comment"></textarea>
+                </label>
+                <input class="button button-block button-positive" type="submit" value="Submit">
+            </div>
+        </form>
+    </ion-content>
+</ion-view>

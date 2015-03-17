@@ -5,7 +5,9 @@
 // the 2nd parameter is an array of 'requires'
 angular.module('apartmentChecklist',
     ['ionic',
-        'apartmentChecklist.controllers'])
+        'apartmentChecklist.controllers',
+        'apartmentChecklist.services',
+        'ngStorage'])
 
     .run(function ($ionicPlatform) {
         $ionicPlatform.ready(function () {
@@ -23,16 +25,40 @@ angular.module('apartmentChecklist',
     .config(function ($stateProvider, $urlRouterProvider) {
         $stateProvider
 
-            .state('index', {
-                url: '/',
-                templateUrl: 'views/main.html',
-                controller: 'MainCtrl'
+            .state('app',{
+                url: '/app',
+                abstract: true,
+                templateUrl: 'views/app.html',
+                controller: 'appCtrl'
             })
-            .state('apartment', {
+            .state('app.main', {
+                cache: false,
+                url: '/main',
+                views:{
+                    app:{
+                        templateUrl: 'views/main.html',
+                        controller: 'MainCtrl'
+                    }
+                }
+            })
+            .state('app.addApartment', {
+                url: '/apartmentForm',
+                views:{
+                    app:{
+                        templateUrl: 'views/addApartment.html',
+                        controller: 'addApartmentCtrl'
+                    }
+                }
+            })
+            .state('app.apartment',{
                 url: '/apartment',
-                templateUrl: 'views/apartment.html',
-                controller: 'ApartmentCtrl'
+                views:{
+                    app:{
+                        templateUrl: 'views/apartmentTemplate.html',
+                        controller: 'apartmentTemplateCtrl'
+                    }
+                }
             });
 
-        $urlRouterProvider.otherwise('/');
+        $urlRouterProvider.otherwise('/app/main');
     });
