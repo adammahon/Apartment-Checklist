@@ -1,5 +1,192 @@
-<ion-view view-title="{{data.name}}">
+<!-- TODO: view-title not working on android phone -->
+<ion-view view-title="" class="header-title">
+    <ion-nav-buttons side="right">
+        <button ng-click="goToState('app.editApartment')" class="button buttons button-clear header-item">
+            <i class="icon ion-edit"></i>
+        </button>
+    </ion-nav-buttons>
     <ion-content>
-        <p>{{data}}</p>
+        <ul class="list apartment-template">
+            <li class="item item-input item-stacked-label">
+                <span class="input-label">Name:</span>
+                <div class="block">{{data.name}}</div>
+            </li>
+            <li class="item item-input item-stacked-label">
+                <span class="input-label">Phone:</span>
+                <div class="block">{{data.phone}}</div>
+            </li>
+            <li class="item item-input item-stacked-label">
+                <span class="input-label">Address:</span>
+                <div class="block">{{data.address}}</div>
+            </li>
+            <li class="item item-input item-stacked-label">
+                <span class="input-label">City:</span>
+                <div class="block">{{data.city}}</div>
+            </li>
+            <li class="item item-input item-stacked-label">
+                <span class="input-label">Bedrooms:</span>
+                <div class="block">{{data.bedroom}}</div>
+            </li>
+            <li class="item item-input item-stacked-label">
+                <span class="input-label">Bathrooms:</span>
+                <div class="block">{{data.bathroom}}</div>
+            </li>
+            <li class="item item-input item-stacked-label">
+                <span class="input-label">Sq. Ft.:</span>
+                <div class="block">{{data.sqft}}</div>
+            </li>
+            <li class="item item-input item-stacked-label">
+                <span class="input-label">Lease Length:</span>
+                <div class="block">{{data.lease}} months</div>
+            </li>
+            <li class="item item-input item-stacked-label">
+                <span class="input-label">Application Fee:</span>
+                <div class="block">${{data.applicationFee}}</div>
+            </li>
+            <li class="item item-input item-stacked-label">
+                <span class="input-label">Security Deposit:</span>
+                <div class="block">${{data.securityDeposit}}</div>
+            </li>
+            <li class="item item-input item-stacked-label">
+                <span class="input-label">Rent:</span>
+                <div class="block">${{data.rent}}</div>
+            </li>
+
+            <!-- TODO: put utilities heading here -->
+            <li class="item item-input item-stacked-label">
+                <span class="input-label">Gas:</span>
+                <div class="block">{{data.utilities.gas}}</div>
+            </li>
+            <li class="item item-input item-stacked-label">
+                <span class="input-label">Water:</span>
+                <div class="block">{{data.utilities.water}}</div>
+            </li>
+            <li class="item item-input item-stacked-label">
+                <span class="input-label">Sewage:</span>
+                <div class="block">{{data.utilities.sewage}}</div>
+            </li>
+            <li class="item item-input item-stacked-label">
+                <span class="input-label">Electric:</span>
+                <div class="block">{{data.utilities.electric}}</div>
+            </li>
+            <li class="item item-input item-stacked-label">
+                <span class="input-label">Trash:</span>
+                <div class="block">{{data.utilities.trash}}</div>
+            </li>
+            <li class="item item-input item-stacked-label">
+                <span class="input-label">Cable:</span>
+                <div class="block">{{data.utilities.cable}}</div>
+            </li>
+            <li class="item item-input item-stacked-label">
+                <span class="input-label">Internet:</span>
+                <div class="block">{{data.utilities.internet}}</div>
+            </li>
+
+            <!-- TODO: put apartmentFeatures heading here -->
+            <li class="item item-input item-stacked-label">
+                <span class="input-label">Alarm:</span>
+                <div class="block">{{data.apartmentFeatures.alarm}}</div>
+            </li>
+            <li class="item item-input item-stacked-label">
+                <span class="input-label">Private Entry:</span>
+                <div class="block">{{data.apartmentFeatures.entry}}</div>
+            </li>
+            <li class="item item-input item-stacked-label">
+                <span class="input-label">Patio / Balcony:</span>
+                <div class="block">{{data.apartmentFeatures.patioBalcony}}</div>
+            </li>
+            <li class="item item-input item-stacked-label">
+                <span class="input-label">Extra Storage:</span>
+                <div class="block">{{data.apartmentFeatures.storage}}</div>
+            </li>
+            <li class="item item-input item-stacked-label">
+                <span class="input-label">Smoke Detectors:</span>
+                <div class="block">{{data.apartmentFeatures.smoke}}</div>
+            </li>
+            <li class="item item-input item-stacked-label">
+                <span class="input-label">Carbon Monoxide Detectors:</span>
+                <div class="block">{{data.apartmentFeatures.monoxide}}</div>
+            </li>
+            <li class="item item-input item-stacked-label">
+                <span class="input-label">Functioning Windows:</span>
+                <div class="block">{{data.apartmentFeatures.window}}</div>
+            </li>
+            <li class="item item-input item-stacked-label">
+                <span class="input-label">Flooring:</span>
+                <div class="block">{{data.apartmentFeatures.floor}}</div>
+            </li>
+            <li class="item item-input item-stacked-label">
+                <span class="input-label">Wall Conditions:</span>
+                <div class="block">{{data.apartmentFeatures.wall}}</div>
+            </li>
+            <li class="item item-input item-stacked-label">
+                <span class="input-label">Closet Space:</span>
+                <div class="block">{{data.apartmentFeatures.closet}}</div>
+            </li>
+
+            <!-- TODO: put appliances heading here -->
+            <li class="item item-input item-stacked-label">
+                <span class="input-label">Washer:</span>
+                <div class="block">{{data.appliances.washer}}</div>
+            </li>
+            <li class="item item-input item-stacked-label">
+                <span class="input-label">Dryer:</span>
+                <div class="block">{{data.appliances.dryer}}</div>
+            </li>
+            <li class="item item-input item-stacked-label">
+                <span class="input-label">Refrigerator:</span>
+                <div class="block">{{data.appliances.refrigerator}}</div>
+            </li>
+            <li class="item item-input item-stacked-label">
+                <span class="input-label">Stove:</span>
+                <div class="block">{{data.appliances.stove}}</div>
+            </li>
+            <li class="item item-input item-stacked-label">
+                <span class="input-label">Dishwasher:</span>
+                <div class="block">{{data.appliances.dishwasher}}</div>
+            </li>
+            <li class="item item-input item-stacked-label">
+                <span class="input-label">Microwave:</span>
+                <div class="block">{{data.appliances.microwave}}</div>
+            </li>
+            <li class="item item-input item-stacked-label">
+                <span class="input-label">Sink Garbage Disposal:</span>
+                <div class="block">{{data.appliances.sinkGarbage}}</div>
+            </li>
+
+            <!-- TODO: put community heading here -->
+            <li class="item item-input item-stacked-label">
+                <span class="input-label">Reachable Emergency Exits:</span>
+                <div class="block">{{data.community.emergencyExit}}</div>
+            </li>
+            <li class="item item-input item-stacked-label">
+                <span class="input-label">Pet Friendly:</span>
+                <div class="block">{{data.community.pet}}</div>
+            </li>
+            <li class="item item-input item-stacked-label">
+                <span class="input-label">Package Service:</span>
+                <div class="block">{{data.community.package}}</div>
+            </li>
+            <li class="item item-input item-stacked-label">
+                <span class="input-label">Emergency Maintenance:</span>
+                <div class="block">{{data.community.emergencyMaintenance}}</div>
+            </li>
+            <li class="item item-input item-stacked-label">
+                <span class="input-label">Laundry Facilities:</span>
+                <div class="block">{{data.community.laundry}}</div>
+            </li>
+            <li class="item item-input item-stacked-label">
+                <span class="input-label">Noise Level:</span>
+                <div class="block">{{data.community.noise}}</div>
+            </li>
+            <li class="item item-input item-stacked-label">
+                <span class="input-label">Distance to Work:</span>
+                <div class="block">{{data.work}} min</div>
+            </li>
+            <li class="item item-input item-stacked-label comments-item">
+                <span class="input-label">Comments:</span>
+                <div class="block">{{data.comment}}</div>
+            </li>
+        </ul>
     </ion-content>
 </ion-view>

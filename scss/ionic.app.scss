@@ -21,3 +21,32 @@ $ionicons-font-path: "../lib/ionic/fonts" !default;
 // Include all of Ionic
 @import "www/lib/ionic/scss/ionic";
 
+.add-apartment-form, .edit-apartment-form{
+    input[type="submit"]{
+        width: 90%;
+        margin: 0 auto 1em;
+    }
+    textarea {
+        resize: none;
+        height: 100px;
+    }
+    input[type=number]::-webkit-inner-spin-button,
+    input[type=number]::-webkit-outer-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+    }
+}
+.apartment-template{
+    /*span{
+        float: right;
+    }*/
+    .comments-item{
+        white-space: normal;
+    }
+}
+.main{
+    button.button.button-block.button-balanced{
+        width: 90%;
+        margin: 1em auto;
+    }
+}

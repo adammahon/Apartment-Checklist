@@ -42,7 +42,8 @@ angular.module('apartmentChecklist',
                 }
             })
             .state('app.addApartment', {
-                url: '/apartmentForm',
+                cache: false,
+                url: '/addApartmentForm',
                 views:{
                     app:{
                         templateUrl: 'views/addApartment.html',
@@ -50,7 +51,18 @@ angular.module('apartmentChecklist',
                     }
                 }
             })
+            .state('app.editApartment', {
+                cache: false,
+                url: '/editApartmentForm',
+                views:{
+                    app:{
+                        templateUrl: 'views/editApartment.html',
+                        controller: 'editApartmentCtrl'
+                    }
+                }
+            })
             .state('app.apartment',{
+                cache: false,
                 url: '/apartment',
                 views:{
                     app:{

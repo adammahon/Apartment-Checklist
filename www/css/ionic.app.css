@@ -7589,3 +7589,24 @@ a.button {
   opacity: 0;
   -webkit-transition-duration: 0s;
   transition-duration: 0s; }
+
+.add-apartment-form input[type="submit"], .edit-apartment-form input[type="submit"] {
+  width: 90%;
+  margin: 0 auto 1em; }
+.add-apartment-form textarea, .edit-apartment-form textarea {
+  resize: none;
+  height: 100px; }
+.add-apartment-form input[type=number]::-webkit-inner-spin-button, .add-apartment-form input[type=number]::-webkit-outer-spin-button, .edit-apartment-form input[type=number]::-webkit-inner-spin-button, .edit-apartment-form input[type=number]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0; }
+
+.apartment-template {
+  /*span{
+        float: right;
+    }*/ }
+  .apartment-template .comments-item {
+    white-space: normal; }
+
+.main button.button.button-block.button-balanced {
+  width: 90%;
+  margin: 1em auto; }

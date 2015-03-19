@@ -1,24 +1,24 @@
-<ion-view view-title="Add Apartment" class="header-title">
+<ion-view view-title="{{edit.name}}" class="header-title">
     <ion-content>
-        <form ng-submit="addApartmentSubmit()" class="add-apartment-form">
+        <form ng-submit="editApartmentSubmit(edit.id)" class="edit-apartment-form">
             <div class="list">
                 <label class="item item-input">
-                    <input type="text" placeholder="Name" ng-model="add.name" required>
+                    <input type="text" placeholder="Name" ng-model="edit.name" value="{{edit.name}}" required>
                 </label>
                 <label class="item item-input">
-                    <input type="text" placeholder="Phone #" ng-model="add.phone">
+                    <input type="text" placeholder="Phone #" ng-model="edit.phone" value="{{edit.phone}}">
                 </label>
                 <label class="item item-input">
-                    <input type="text" placeholder="Address" ng-model="add.address">
+                    <input type="text" placeholder="Address" ng-model="edit.address" value="{{edit.address}}">
                 </label>
                 <label class="item item-input">
-                    <input type="text" placeholder="City" ng-model="add.city">
+                    <input type="text" placeholder="City" ng-model="edit.city" value="{{edit.city}}">
                 </label>
                 <label class="item item-input item-stacked-label">
                     <span class="input-label">Bedrooms</span>
                     <div class="range">
                         0
-                        <input type="range" name="bedroom" min="0" max="5" value="{{add.bedroom}}" ng-model="add.bedroom">
+                        <input type="range" name="bedroom" min="0" max="5" value="{{edit.bedroom}}" ng-model="edit.bedroom">
                         5
                     </div>
                 </label>
@@ -26,71 +26,71 @@
                     <span class="input-label">Bathrooms</span>
                     <div class="range">
                         0
-                        <input type="range" name="bathroom" min="0" max="5" value="{{add.bathroom}}" ng-model="add.bathroom">
+                        <input type="range" name="bathroom" min="0" max="5" value="{{edit.bathroom}}" ng-model="edit.bathroom">
                         5
                     </div>
                 </label>
                 <label class="item item-input">
-                    <input type="number" placeholder="Sq. Ft." ng-model="add.sqft">
+                    <input type="number" placeholder="Sq. Ft." ng-model="edit.sqft" value="{{edit.sqft}}">
                 </label>
                 <label class="item item-input item-stacked-label">
-                    <span class="input-label">Lease Length (months)</span>
+                    <span class="input-label">Lease Length (Months)</span>
                     <div class="range">
                         0
-                        <input type="range" name="lease" min="0" max="24" value="{{add.lease}}" ng-model="add.lease">
+                        <input type="range" name="lease" min="0" max="24" value="{{edit.lease}}" ng-model="edit.lease">
                         24
                     </div>
                 </label>
                 <label class="item item-input">
-                    <input type="number" placeholder="Application Fee" ng-model="add.applicationFee">
+                    <input type="number" placeholder="Application Fee" ng-model="edit.applicationFee" value="{{edit.applicationFee}}">
                 </label>
                 <label class="item item-input">
-                    <input type="number" placeholder="Security Deposit" ng-model="add.securityDeposit">
+                    <input type="number" placeholder="Security Deposit" ng-model="edit.securityDeposit" value="{{edit.securityDeposit}}">
                 </label>
                 <label class="item item-input">
-                    <input type="number" placeholder="Rent" ng-model="add.rent">
+                    <input type="number" placeholder="Monthly Rent" ng-model="edit.rent" value="{{edit.rent}}">
                 </label>
                 <ul class="item">
                     <span class="input-label">Utilities</span>
                     <li class="item item-checkbox">
                         <label class="checkbox">
-                            <input type="checkbox" ng-model="add.utilities.gas">
+                            <input type="checkbox" ng-model="edit.utilities.gas" value="{{edit.utilities.gas}}">
                         </label>
                         Gas
                     </li>
                     <li class="item item-checkbox">
                         <label class="checkbox">
-                            <input type="checkbox" ng-model="add.utilities.water">
+                            <input type="checkbox" ng-model="edit.utilities.water" value="{{edit.utilities.water}}">
                         </label>
                         Water
                     </li>
                     <li class="item item-checkbox">
                         <label class="checkbox">
-                            <input type="checkbox" ng-model="add.utilities.sewage">
+                            <input type="checkbox" ng-model="edit.utilities.sewage" value="{{edit.utilities.sewage}}">
                         </label>
                         Sewage
                     </li>
                     <li class="item item-checkbox">
                         <label class="checkbox">
-                            <input type="checkbox" ng-model="add.utilities.electric">
+                            <input type="checkbox" ng-model="edit.utilities.electric" value="{{edit.utilities.electric}}">
                         </label>
                         Electric
                     </li>
                     <li class="item item-checkbox">
                         <label class="checkbox">
-                            <input type="checkbox" ng-model="add.utilities.trash">
+                            <input type="checkbox" ng-model="edit.utilities.trash" value="{{edit.utilities.trash}}">
                         </label>
                         Trash Pickup
                     </li>
                     <li class="item item-checkbox">
                         <label class="checkbox">
-                            <input type="checkbox" ng-model="add.utilities.cable">
+                            <input type="checkbox" ng-model="edit.utilities.cable" value="{{edit.utilities.cable}}">
                         </label>
                         Cable
                     </li>
                     <li class="item item-checkbox">
                         <label class="checkbox">
-                            <input type="checkbox" ng-model="add.utilities.internet">
+                            <input type="checkbox" ng-model="edit.utilities.internet" value="{{edit.utilities.internet}}">
                         </label>
                         Internet
                     </li>
@@ -99,43 +99,43 @@
                     <span class="input-label">Apartment Features</span>
                     <li class="item item-checkbox">
                         <label class="checkbox">
-                            <input type="checkbox" ng-model="add.apartmentFeatures.alarm">
+                            <input type="checkbox" ng-model="edit.apartmentFeatures.alarm" value="{{edit.apartmentFeatures.alarm}}">
                         </label>
                         Alarm
                     </li>
                     <li class="item item-checkbox">
                         <label class="checkbox">
-                            <input type="checkbox" ng-model="add.apartmentFeatures.entry">
+                            <input type="checkbox" ng-model="edit.apartmentFeatures.entry" value="{{edit.apartmentFeatures.entry}}">
                         </label>
                         Private Entry
                     </li>
                     <li class="item item-checkbox">
                         <label class="checkbox">
-                            <input type="checkbox" ng-model="add.apartmentFeatures.patioBalcony">
+                            <input type="checkbox" ng-model="edit.apartmentFeatures.patioBalcony" value="{{edit.apartmentFeatures.patioBalcony}}">
                         </label>
                         Patio / Balcony
                     </li>
                     <li class="item item-checkbox">
                         <label class="checkbox">
-                            <input type="checkbox" ng-model="add.apartmentFeatures.storage">
+                            <input type="checkbox" ng-model="edit.apartmentFeatures.storage" value="{{edit.apartmentFeatures.storage}}">
                         </label>
                         Extra Storage
                     </li>
                     <li class="item item-checkbox">
                         <label class="checkbox">
-                            <input type="checkbox" ng-model="add.apartmentFeatures.smoke">
+                            <input type="checkbox" ng-model="edit.apartmentFeatures.smoke" value="{{edit.apartmentFeatures.smoke}}">
                         </label>
                         Smoke Detectors
                     </li>
                     <li class="item item-checkbox">
                         <label class="checkbox">
-                            <input type="checkbox" ng-model="add.apartmentFeatures.monoxide">
+                            <input type="checkbox" ng-model="edit.apartmentFeatures.monoxide" value="{{edit.apartmentFeatures.monoxide}}">
                         </label>
                         Carbon Monoxide Detectors
                     </li>
                     <li class="item item-checkbox">
                         <label class="checkbox">
-                            <input type="checkbox" ng-model="add.apartmentFeatures.window">
+                            <input type="checkbox" ng-model="edit.apartmentFeatures.window" value="{{edit.apartmentFeatures.window}}">
                         </label>
                         Functioning Windows
                     </li>
@@ -144,7 +144,7 @@
                     <div class="input-label">
                         Flooring
                     </div>
-                    <select ng-model="add.apartmentFeatures.floor">
+                    <select ng-model="edit.apartmentFeatures.floor">
                         <option></option>
                         <option>Carpet</option>
                         <option>Laminate</option>
@@ -156,18 +156,18 @@
                     </select>
                 </label>
                 <label class="item item-input item-stacked-label">
-                    <span class="input-label">Wall Conditions: {{add.rating.wall}}</span>
+                    <span class="input-label">Wall Conditions</span>
                     <div class="range">
                         0
-                        <input type="range" name="wall" min="0" max="20" value="{{add.apartmentFeatures.wall}}" ng-model="add.apartmentFeatures.wall" ng-change="updateRating(add.apartmentFeatures.wall, 'wall')">
+                        <input type="range" name="wall" min="0" max="20" value="{{edit.apartmentFeatures.wall}}" ng-model="edit.apartmentFeatures.wall">
                         20
                     </div>
                 </label>
                 <label class="item item-input item-stacked-label">
-                    <span class="input-label">Closet Space: {{add.rating.closet}}</span>
+                    <span class="input-label">Closet Space</span>
                     <div class="range">
                         0
-                        <input type="range" name="closet" min="0" max="20" value="{{add.apartmentFeatures.closet}}" ng-model="add.apartmentFeatures.closet" ng-change="updateRating(add.apartmentFeatures.closet, 'closet')">
+                        <input type="range" name="closet" min="0" max="20" value="{{edit.apartmentFeatures.closet}}" ng-model="edit.apartmentFeatures.closet">
                         20
                     </div>
                 </label>
@@ -175,43 +175,43 @@
                     <span class="input-label">Appliances Included</span>
                     <li class="item item-checkbox">
                         <label class="checkbox">
-                            <input type="checkbox" ng-model="add.appliances.washer">
+                            <input type="checkbox" ng-model="edit.appliances.washer" value="{{edit.appliances.washer}}">
                         </label>
                         Washer
                     </li>
                     <li class="item item-checkbox">
                         <label class="checkbox">
-                            <input type="checkbox" ng-model="add.appliances.dryer">
+                            <input type="checkbox" ng-model="edit.appliances.dryer" value="{{edit.appliances.dryer}}">
                         </label>
                         Dryer
                     </li>
                     <li class="item item-checkbox">
                         <label class="checkbox">
-                            <input type="checkbox" ng-model="add.appliances.refrigerator">
+                            <input type="checkbox" ng-model="edit.appliances.refrigerator" value="{{edit.appliances.refrigerator}}">
                         </label>
                         Refrigerator
                     </li>
                     <li class="item item-checkbox">
                         <label class="checkbox">
-                            <input type="checkbox" ng-model="add.appliances.stove">
+                            <input type="checkbox" ng-model="edit.appliances.stove" value="{{edit.appliances.stove}}">
                         </label>
                         Stove
                     </li>
                     <li class="item item-checkbox">
                         <label class="checkbox">
-                            <input type="checkbox" ng-model="add.appliances.dishwasher">
+                            <input type="checkbox" ng-model="edit.appliances.dishwasher" value="{{edit.appliances.dishwasher}}">
                         </label>
                         Dishwasher
                     </li>
                     <li class="item item-checkbox">
                         <label class="checkbox">
-                            <input type="checkbox" ng-model="add.appliances.microwave">
+                            <input type="checkbox" ng-model="edit.appliances.microwave" value="{{edit.appliances.microwave}}">
                         </label>
                         Microwave
                     </li>
                     <li class="item item-checkbox">
                         <label class="checkbox">
-                            <input type="checkbox" ng-model="add.appliances.sinkGarbage">
+                            <input type="checkbox" ng-model="edit.appliances.sinkGarbage" value="{{edit.appliances.sinkGarbage}}">
                         </label>
                         Sink Garbage Disposal
                     </li>
@@ -220,48 +220,48 @@
                     <span class="input-label">Community Features</span>
                     <li class="item item-checkbox">
                         <label class="checkbox">
-                            <input type="checkbox" ng-model="add.community.emergencyExit">
+                            <input type="checkbox" ng-model="edit.community.emergencyExit" value="{{edit.community.emergencyExit}}">
                         </label>
                         Reachable Emergency Exits
                     </li>
                     <li class="item item-checkbox">
                         <label class="checkbox">
-                            <input type="checkbox" ng-model="add.community.pet">
+                            <input type="checkbox" ng-model="edit.community.pet" value="{{edit.community.pet}}">
                         </label>
                         Pet-Friendly
                     </li>
                     <li class="item item-checkbox">
                         <label class="checkbox">
-                            <input type="checkbox" ng-model="add.community.package">
+                            <input type="checkbox" ng-model="edit.community.package" value="{{edit.community.package}}">
                         </label>
                         Package Service
                     </li>
                     <li class="item item-checkbox">
                         <label class="checkbox">
-                            <input type="checkbox" ng-model="add.community.emergencyMaintenance">
+                            <input type="checkbox" ng-model="edit.community.emergencyMaintenance" value="{{edit.community.emergencyMaintenance}}">
                         </label>
                         Emergency Maintenance
                     </li>
                     <li class="item item-checkbox">
                         <label class="checkbox">
-                            <input type="checkbox" ng-model="add.community.laundry">
+                            <input type="checkbox" ng-model="edit.community.laundry" value="{{edit.community.laundry}}">
                         </label>
                         Laundry Facilities
                     </li>
                 </ul>
                 <label class="item item-input item-stacked-label">
-                    <span class="input-label">Noise Level: {{add.rating.noise}}</span>
+                    <span class="input-label">Noise Level</span>
                     <div class="range">
                         0
-                        <input type="range" name="wall" min="0" max="20" value="{{add.community.noise}}" ng-model="add.community.noise" ng-change="updateRating(add.community.noise, 'noise')">
+                        <input type="range" name="wall" min="0" max="20" value="{{edit.community.noise}}" ng-model="edit.community.noise">
                         20
                     </div>
                 </label>
                 <label class="item item-input">
-                    <input type="number" placeholder="Distance to Work (min.)" ng-model="add.work">
+                    <input type="number" placeholder="Distance to Work (min.)" ng-model="edit.work" value="{{edit.work}}">
                 </label>
                 <label class="item item-input">
-                    <textarea placeholder="Comments" ng-model="add.comment"></textarea>
+                    <textarea placeholder="Comments" ng-model="edit.comment"></textarea>
                 </label>
             </div>
             <input class="button button-block button-balanced" type="submit" value="Submit">

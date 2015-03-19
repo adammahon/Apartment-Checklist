@@ -13,8 +13,11 @@ angular.module('apartmentChecklist.services', [])
                 return storage.data[value];
             },
             setData: function(value){
-                var data = value;
-                storage.data.push(data);
+                storage.data.push(value);
+                this.updateDataIds();
+            },
+            editData: function(idValue, dataValue){
+                storage.data[idValue] = dataValue;
                 this.updateDataIds();
             },
             deleteData: function(value){
@@ -40,6 +43,30 @@ angular.module('apartmentChecklist.services', [])
             },
             setId: function(value){
                 id = value;
+            }
+        }
+    })
+    .factory('ratingData', function(){
+        return{
+            rating: function(value){
+                if(value <= 4){
+                    return 'Very Poor';
+                }
+                else if(4 < value && 8 >= value){
+                    return 'Poor';
+                }
+                else if(8 < value && 12 >= value){
+                    return 'Neutral';
+                }
+                else if(12 < value && 16 >= value){
+                    return 'Good';
+                }
+                else if(16 < value && 20 >= value){
+                    return 'Very Good';
+                }
+                else{
+                    return 'Neutral';
+                }
             }
         }
     });
